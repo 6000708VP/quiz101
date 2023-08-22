@@ -7,7 +7,9 @@
 <p>Lado base <input id="width" size=1/></p>
 <p>Altura    <input id="height" size=1/></p>
 <p>Vector traslación    <input id="vt" size=8/></p>
-<p><button>Ejecutar traslación</button></p>
+<p>
+    <button id="btn_tr" onclick="vertices()">Ejecutar traslación </button>
+</p>
 <p>Vertices posición inicial    <input id="vert_ini" size=50/></p>
 <p>Vertices posición final      <input id="vert_end" size=50/></p>
 <script>
@@ -22,15 +24,19 @@
     });
     return arrn;
     }
-    function matrizTraslacion(tx, ty, tz) {
+    function vertices(lado,altura) {
+        lado = byId(width);
+        altura = byId(height);
         return [
             [0, 0, 0],
-            [0, 1, 0],
-            [0, 0, 1],
-            [0, 0, 0],
-            [0, 0, 0]            
+            [lado, 0, 0],
+            [lado, 0, lado],
+            [0, 0, lado],
+            [arrn=[0], altura, arrn=[0]]            
         ];
+        document.getElementById('vt').value=vertices(lado,altura);
     }
+   
 
 </script>
 </body>
