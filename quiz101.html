@@ -1,0 +1,37 @@
+<html>
+<head>
+
+</head>
+<body>
+<h1>Traslación de una pirámidde</h1>
+<p>Lado base <input id="width" size=1/></p>
+<p>Altura    <input id="height" size=1/></p>
+<p>Vector traslación    <input id="vt" size=8/></p>
+<p><button>Ejecutar traslación</button></p>
+<p>Vertices posición inicial    <input id="vert_ini" size=50/></p>
+<p>Vertices posición final      <input id="vert_end" size=50/></p>
+<script>
+    function byId(id){
+        return document.getElementById(id).value;
+    }
+    function strarr2num(arreglo, lim) {
+        var arrs = arreglo.split(lim);
+        arrn = [];
+        arrs.forEach((elem) => {
+            arrn.push(Number(elem));
+    });
+    return arrn;
+    }
+    function matrizTraslacion(tx, ty, tz) {
+        return [
+            [0, 0, 0],
+            [0, 1, 0],
+            [0, 0, 1],
+            [0, 0, 0],
+            [0, 0, 0]            
+        ];
+    }
+
+</script>
+</body>
+</html>
