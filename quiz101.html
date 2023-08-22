@@ -8,25 +8,23 @@
 <p>Altura    <input id="height" size=1/></p>
 <p>Vector traslación    <input id="vt" size=8/></p>
 <p>
-    <button id="btn_tr" onclick="vertices()">Ejecutar traslación </button>
+    <button id="btn_tr" onclick="traslacion()">Ejecutar traslación </button>
 </p>
 <p>Vertices posición inicial    <input id="vert_ini" size=50/></p>
 <p>Vertices posición final      <input id="vert_end" size=50/></p>
 <script>
-    function byId(id){
-        return document.getElementById(id).value;
-    }
+
     function strarr2num(arreglo, lim) {
         var arrs = arreglo.split(lim);
         arrn = [];
         arrs.forEach((elem) => {
-            arrn.push(Number(elem));
+            console.log(elem);
     });
     return arrn;
     }
     function vertices(lado,altura) {
-        lado = byId(width);
-        altura = byId(height);
+        lado= document.getElementById('width').value;
+        altura = document.getElementById('height').value;
         return [
             [0, 0, 0],
             [lado, 0, 0],
@@ -34,9 +32,12 @@
             [0, 0, lado],
             [arrn=[0], altura, arrn=[0]]            
         ];
-        document.getElementById('vt').value=vertices(lado,altura);
     }
-   
+    function traslacion(){
+            var aos = document.getElementById('vt').value;
+           aon = strarr2num(aos, ',');
+           document.getElementById('vert_ini').value = vertices(width,height) ;
+        }
 
 </script>
 </body>
